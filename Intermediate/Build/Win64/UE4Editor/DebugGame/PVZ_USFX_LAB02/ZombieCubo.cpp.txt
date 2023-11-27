@@ -1,0 +1,7 @@
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\UE4Editor\DebugGame\PVZ_USFX_LAB02\Definitions.PVZ_USFX_LAB02.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Source\PVZ_USFX_LAB02\ZombieCubo.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Source\PVZ_USFX_LAB02\Zombie.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Source\PVZ_USFX_LAB02\State.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\State.generated.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\Zombie.generated.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\ZombieCubo.generated.h

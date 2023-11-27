@@ -1,0 +1,5 @@
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\UE4Editor\DebugGame\PVZ_USFX_LAB02\Definitions.PVZ_USFX_LAB02.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Source\PVZ_USFX_LAB02\MegaSol.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Source\PVZ_USFX_LAB02\Potenciador.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\Potenciador.generated.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\MegaSol.generated.h

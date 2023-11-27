@@ -1,0 +1,43 @@
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\UE4Editor\DebugGame\PVZ_USFX_LAB02\Definitions.PVZ_USFX_LAB02.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Source\PVZ_USFX_LAB02\PVZ_USFX_LAB02GameMode.h
+D:\Juegos y aplicaciones\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
+D:\Juegos y aplicaciones\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
+D:\Juegos y aplicaciones\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
+D:\Juegos y aplicaciones\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\PVZ_USFX_LAB02GameMode.generated.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Source\PVZ_USFX_LAB02\PVZ_USFX_LAB02Pawn.h
+D:\Juegos y aplicaciones\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
+D:\Juegos y aplicaciones\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/CharacterMovementReplication.h
+D:\Juegos y aplicaciones\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CharacterMovementReplication.generated.h
+D:\Juegos y aplicaciones\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
+D:\Juegos y aplicaciones\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
+D:\Juegos y aplicaciones\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\PVZ_USFX_LAB02Pawn.generated.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Source\PVZ_USFX_LAB02\Zombie.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Source\PVZ_USFX_LAB02\State.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\State.generated.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\Zombie.generated.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Source\PVZ_USFX_LAB02\Plant.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\Plant.generated.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Source\PVZ_USFX_LAB02\Potenciador.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\Potenciador.generated.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Source\PVZ_USFX_LAB02\MegaSol.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\MegaSol.generated.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Source\PVZ_USFX_LAB02\ZombieComun.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\ZombieComun.generated.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Source\PVZ_USFX_LAB02\ZombieCono.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\ZombieCono.generated.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Source\PVZ_USFX_LAB02\ZombieCubo.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\ZombieCubo.generated.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Source\PVZ_USFX_LAB02\ZombieSenal.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\ZombieSenal.generated.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Source\PVZ_USFX_LAB02\Lanzaguisantes.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\Lanzaguisantes.generated.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Source\PVZ_USFX_LAB02\Repetidora.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\Repetidora.generated.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Source\PVZ_USFX_LAB02\Girasol.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\Girasol.generated.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Source\PVZ_USFX_LAB02\Nuez.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\Nuez.generated.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Source\PVZ_USFX_LAB02\Hongo.h
+E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\Hongo.generated.h
