@@ -14,7 +14,9 @@ AItemExplosivo::AItemExplosivo()
 
 void AItemExplosivo::AplicarEfecto(AZombie* Zombie)
 {
-	float vida = Zombie->GetHealth() - 80;
+	float vida = Zombie->GetHealth() - 90;
 	Zombie->SetHealth(vida);
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Black, FString::Printf(TEXT("Zombie exploto, vida: %f"), Zombie->GetHealth()));
+
 	this->Destroy();
 }
