@@ -23,17 +23,6 @@ void AEstadoNormal::BeginPlay()
 void AEstadoNormal::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	if (ZombieEstado->Health <= 0.0f)
-	{
-		Destroy();
-		ZombieEstado->Destroy();
-	}
-
-	if (ZombieEstado->bCanMove && !this->IsHidden())
-	{
-		//MoveToTarget(FVector(-800.0f, -600.0f, 160.0f));
-		Movimiento(FVector(-800.0f, -600.0f, 160.0f));
-	}
 }
 
 void AEstadoNormal::Movimiento(FVector TargetLocation)

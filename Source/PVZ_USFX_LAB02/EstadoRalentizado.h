@@ -27,11 +27,13 @@ public:
 private:
 	UPROPERTY()
 	class AZombie* ZombieEstado;
+	bool canMove = true;
 
 public:
 	virtual void Movimiento(FVector TargetLocation) override;
 	virtual void Ataque() override;
 	virtual float DanioRecibido(float Damage) override;
+
 
 	//virtual FString ToString() override;
 	virtual void DefinirZombie(class AZombie* EstadodeZombie) override;

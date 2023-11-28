@@ -259,8 +259,11 @@
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\winrt"
+/FI"E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\PVZ_USFX_LAB02Editor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h"
+/Yu"E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\PVZ_USFX_LAB02Editor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h"
+/Fp"E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\PVZ_USFX_LAB02Editor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h.pch"
 "E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Source\PVZ_USFX_LAB02\EstadoCongelado.cpp"
-/FI"E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\UE4Editor\DebugGame\PVZ_USFX_LAB02\Definitions.h"
+/FI"E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\UE4Editor\DebugGame\PVZ_USFX_LAB02\Definitions.PVZ_USFX_LAB02.h"
 /Fo"E:\Estudio\Programacion Avanzada II\Repo\Pvz Para el Final\PVZ_USFX_LAB02-master\Intermediate\Build\Win64\UE4Editor\DebugGame\PVZ_USFX_LAB02\EstadoCongelado.cpp.obj"
 /TP
 /GR-

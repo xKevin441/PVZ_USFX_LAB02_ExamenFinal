@@ -20,12 +20,13 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+private:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 	class AZombie* ZombieEstado;
+	bool canMove = false;
 
-private:
+public:
 	virtual void Movimiento(FVector TargetLocation) override;
 	virtual void Ataque() override;
 	virtual float DanioRecibido(float Damage) override;

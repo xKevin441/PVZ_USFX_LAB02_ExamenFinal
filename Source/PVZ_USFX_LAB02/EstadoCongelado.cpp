@@ -16,24 +16,15 @@ AEstadoCongelado::AEstadoCongelado()
 void AEstadoCongelado::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
 }
 
 // Called every frame
 void AEstadoCongelado::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	if (ZombieEstado->Health <= 0.0f)
-	{
-		Destroy();
-		ZombieEstado->Destroy();
-	}
 
-	if (ZombieEstado->bCanMove && !this->IsHidden())
-	{
-		//MoveToTarget(FVector(-800.0f, -600.0f, 160.0f));
-		Movimiento(FVector(-800.0f, -600.0f, 160.0f));
-	}
+
 }
 
 void AEstadoCongelado::Movimiento(FVector TargetLocation)

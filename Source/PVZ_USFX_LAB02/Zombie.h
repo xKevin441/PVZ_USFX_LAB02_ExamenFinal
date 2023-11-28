@@ -21,7 +21,7 @@ public:
 	UPROPERTY(EditAnywhere)
 	class UStaticMeshComponent* ZombieMeshComponent;
 	UFUNCTION()
-		void OnOverlapBeginFunction(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+		void OnMyOverlapBegin(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 	UFUNCTION()
 		void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
 
@@ -51,6 +51,7 @@ public:
 private:
 	IState* EstadoNormal;
 	IState* EstadoCongelado;
+	IState* EstadoRalentizado;
 
 	IState* ZombieState;
 	FString EstadoActual;
@@ -65,4 +66,6 @@ public:
 
 	void SetDamageGenerates(float _DamageGenerates) { DamageGenerates = _DamageGenerates; }
 	float GetDamageGenerates() { return DamageGenerates; }
+	void SetHealth(float _Health) { Health = _Health; }
+	float GetHealth() { return Health; }
 };

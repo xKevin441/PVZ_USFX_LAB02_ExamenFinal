@@ -16,6 +16,7 @@
 #include "Girasol.h"
 #include "Nuez.h"
 #include "Hongo.h"
+#include "ItemFacade.h"
 
 APVZ_USFX_LAB02GameMode::APVZ_USFX_LAB02GameMode()
 {
@@ -54,6 +55,11 @@ APVZ_USFX_LAB02GameMode::APVZ_USFX_LAB02GameMode()
 void APVZ_USFX_LAB02GameMode::BeginPlay()
 {
 	Super::BeginPlay();
+
+	// Spawn the item facade
+	AItemFacade* ItemFacade = GetWorld()->SpawnActor<AItemFacade>(AItemFacade::StaticClass());
+	ItemFacade->setTiempoEntreSpawn(2.0f);
+	ItemFacade->setCantidadItems(10.0f);
 
 	FTransform SpawnLocation;
 	SpawnLocation.SetLocation(FVector(-1500.0f, 1200.0f, 200.0f));
@@ -125,9 +131,9 @@ void APVZ_USFX_LAB02GameMode::BeginPlay()
 		}
 	}
 
-	initialPositionX = -1500.0f;
+	initialPositionX = -1650.0f;
 	initialPositionY = 100.0f;
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 7; i++)
 	{
 		ALanzaguisantes* NewLanzaguisantes = SpawnPlantLanzaguisantes(FVector(initialPositionX + i * 150.0f, initialPositionY, 200.0f));
 

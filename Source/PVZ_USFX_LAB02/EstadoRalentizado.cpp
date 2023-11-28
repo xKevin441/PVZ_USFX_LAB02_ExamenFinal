@@ -23,17 +23,6 @@ void AEstadoRalentizado::BeginPlay()
 void AEstadoRalentizado::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	if (ZombieEstado->Health <= 0.0f)
-	{
-		Destroy();
-		ZombieEstado->Destroy();
-	}
-
-	if (ZombieEstado->bCanMove && !this->IsHidden())
-	{
-		//MoveToTarget(FVector(-800.0f, -600.0f, 160.0f));
-		Movimiento(FVector(-800.0f, -600.0f, 160.0f));
-	}
 }
 
 void AEstadoRalentizado::Movimiento(FVector TargetLocation)
@@ -42,7 +31,7 @@ void AEstadoRalentizado::Movimiento(FVector TargetLocation)
 	float DistanceToTarget = FVector::Dist(TargetLocation, FVector(-800.0f, 400.0f, 160.0f));
 
 	// Reducimos la velocidad de movimiento
-	float Velocidad = ZombieEstado->MovementSpeed / 4.0f;
+	float Velocidad = ZombieEstado->MovementSpeed * 0.5f;
 
 	float DeltaMove = Velocidad * GetWorld()->DeltaTimeSeconds;
 

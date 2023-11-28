@@ -6,6 +6,7 @@
 #include "Components/StaticMeshComponent.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Engine/StaticMesh.h"
+#include "Zombie.h"
 
 APVZ_USFX_LAB02Projectile::APVZ_USFX_LAB02Projectile() 
 {
@@ -50,6 +51,8 @@ void APVZ_USFX_LAB02Projectile::OnHit(UPrimitiveComponent* HitComp, AActor* Othe
 			//OtherComp->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
 
 			OtherActor->TakeDamage(DamageGenerates, FDamageEvent(), nullptr, this);
+			//AZombie* Zombie = Cast<AZombie>(OtherActor);
+			//Zombie->Inicializar("Congelado");
 			//OtherComp->DestroyComponent();
 			//OtherActor->Destroy();
 		}

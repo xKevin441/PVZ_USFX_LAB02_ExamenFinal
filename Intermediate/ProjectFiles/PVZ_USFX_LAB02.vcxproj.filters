@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\PVZ_USFX_LAB02.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{71EB31BC-44BC-4A57-9958-234884D36937}</UniqueIdentifier>
+      <UniqueIdentifier>{E03A5AB8-26ED-4F15-8592-1737101B8C39}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\PVZ_USFX_LAB02.Target.cs">
       <Filter>Source</Filter>
@@ -15,8 +15,9 @@
     <None Include="..\..\.gitignore" />
     <None Include="..\..\.ignore" />
     <None Include="..\..\PVZ_USFX_LAB02.code-workspace" />
+    <None Include="..\..\README.md" />
     <Filter Include="Config">
-      <UniqueIdentifier>{F6F9752B-CA0F-44A2-9172-89A4FE142194}</UniqueIdentifier>
+      <UniqueIdentifier>{A07FB886-F511-425B-84F3-98702D6B08C2}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -34,7 +35,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\PVZ_USFX_LAB02">
-      <UniqueIdentifier>{5727FF3C-168A-4A12-ACD8-D0825D85DEBD}</UniqueIdentifier>
+      <UniqueIdentifier>{19DD7C85-22BE-47D6-80C5-E7AC25E09FC9}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\PVZ_USFX_LAB02\AbonoMagico.cpp">
       <Filter>Source\PVZ_USFX_LAB02</Filter>
@@ -82,6 +83,36 @@
       <Filter>Source\PVZ_USFX_LAB02</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\PVZ_USFX_LAB02\Hongo.h">
+      <Filter>Source\PVZ_USFX_LAB02</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PVZ_USFX_LAB02\ItemCongelante.cpp">
+      <Filter>Source\PVZ_USFX_LAB02</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PVZ_USFX_LAB02\ItemCongelante.h">
+      <Filter>Source\PVZ_USFX_LAB02</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PVZ_USFX_LAB02\ItemExplosivo.cpp">
+      <Filter>Source\PVZ_USFX_LAB02</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PVZ_USFX_LAB02\ItemExplosivo.h">
+      <Filter>Source\PVZ_USFX_LAB02</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PVZ_USFX_LAB02\ItemFacade.cpp">
+      <Filter>Source\PVZ_USFX_LAB02</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PVZ_USFX_LAB02\ItemFacade.h">
+      <Filter>Source\PVZ_USFX_LAB02</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PVZ_USFX_LAB02\ItemRalentizante.cpp">
+      <Filter>Source\PVZ_USFX_LAB02</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PVZ_USFX_LAB02\ItemRalentizante.h">
+      <Filter>Source\PVZ_USFX_LAB02</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PVZ_USFX_LAB02\Items.cpp">
+      <Filter>Source\PVZ_USFX_LAB02</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PVZ_USFX_LAB02\Items.h">
       <Filter>Source\PVZ_USFX_LAB02</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\PVZ_USFX_LAB02\Lanzaguisantes.cpp">

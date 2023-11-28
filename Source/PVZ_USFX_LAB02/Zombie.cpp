@@ -9,6 +9,8 @@
 #include "State.h"
 #include "EstadoNormal.h"
 #include "EstadoCongelado.h"
+#include "EstadoRalentizado.h"
+#include "Items.h"
 
 // Sets default values
 AZombie::AZombie()
@@ -16,17 +18,20 @@ AZombie::AZombie()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	// Registra la función para la detección de colisiones
-	//OnActorBeginOverlap.AddDynamic(this, &AZombie::OnOverlapBegin);
+	//OnActorBeginOverlap.AddDynamic(this, &AZombie::OnMyOverlapBegin);
 
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> ZombieMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cone.Shape_Cone'"));
 	//static ConstructorHelpers::FObjectFinder<UStaticMesh> ZombieMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cube.Shape_Cube'"));
 	
 	ZombieMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ZombieMesh"));
 	//ZombieMeshComponent->SetStaticMesh(ZombieMesh.Object);
-	ZombieMeshComponent->SetCollisionProfileName(UCollisionProfile::BlockAll_ProfileName);
+	//ZombieMeshComponent->SetCollisionProfileName(UCollisionProfile::BlockAll_ProfileName);
+	ZombieMeshComponent->BodyInstance.SetCollisionProfileName("Zombie");
+	ZombieMeshComponent->SetNotifyRigidBodyCollision(true);
 	ZombieMeshComponent->SetSimulatePhysics(true);
-	ZombieMeshComponent->OnComponentBeginOverlap.AddDynamic(this, &AZombie::OnOverlapBeginFunction);		// set up a notification for when this component hits something
-	//ZombieMeshComponent->OnComponentHit.AddDynamic(this, &AZombie::OnHit);		// set up a notification for when this component hits something
+	//ZombieMeshComponent->OnComponentBeginOverlap.AddDynamic(this, &AZombie::OnOverlapBeginFunction);		// set up a notification for when this component hits something
+	ZombieMeshComponent->OnComponentHit.AddDynamic(this, &AZombie::OnHit);		// set up a notification for when this component hits something
+	
 	RootComponent = ZombieMeshComponent;
 
 	// Asignar la función de evento a OnOverlapBegin del componente de colisión
@@ -35,12 +40,12 @@ AZombie::AZombie()
 	ZombieMeshComponent->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
 
 	Tags.Add(TEXT("Enemy"));
-	DamageGenerates = 20.0f;
+	DamageGenerates = 10.0f;
 	Health = 100.0f;
 	bCanMove = false;
 }
 
-void AZombie::OnOverlapBeginFunction(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+void AZombie::OnMyOverlapBegin(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, FString::Printf(TEXT("Estamos aqui")));
 
@@ -49,13 +54,13 @@ void AZombie::OnOverlapBeginFunction(UPrimitiveComponent* OverlappedComponent, A
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, FString::Printf(TEXT("Estamos aqui")));
 
 		//OtherComp->AddImpulseAtLocation(GetVelocity() * 200.0f, GetActorLocation());
-		if (OtherActor->ActorHasTag("Plant"))
+		if (OtherActor->ActorHasTag("Item"))
 		{
 			//OtherComp->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
 
-			OtherActor->TakeDamage(DamageGenerates, FDamageEvent(), nullptr, this);
+			//OtherActor->TakeDamage(DamageGenerates, FDamageEvent(), nullptr, this);
 			//OtherComp->DestroyComponent();
-			//OtherActor->Destroy();
+			OtherActor->Destroy();
 		}
 		else
 		{
@@ -73,23 +78,21 @@ void AZombie::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitive
 	//if ((OtherActor != nullptr) && (OtherActor != this) && (OtherComp != nullptr) && OtherComp->IsSimulatingPhysics())
 	if ((OtherActor != nullptr) && (OtherActor != this) && (OtherComp != nullptr))
 	{
-
 		//OtherComp->AddImpulseAtLocation(GetVelocity() * 200.0f, GetActorLocation());
-		if ((OtherActor->ActorHasTag("Plant")) || (OtherActor->ActorHasTag("Lanzaguisantes")))
+		if (OtherActor->ActorHasTag("Item"))
 		{
 			//OtherComp->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
-			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, FString::Printf(TEXT("XD")));
-
-			OtherActor->TakeDamage(DamageGenerates, FDamageEvent(), nullptr, this);
-			//OtherComp->DestroyComponent();
-			//OtherActor->Destroy();
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, FString::Printf(TEXT("Zombie piso item")));
+			AItems* Item = Cast<AItems>(OtherActor);
+			Item->AplicarEfecto(this);
+			
 		}
-		else
+		
+		if (OtherActor->ActorHasTag("Plant"))
 		{
-			// Realiza acciones normales para la colisión con otros actores
-			//OnHit(HitComp, OtherActor, OtherComp, NormalImpulse, Hit);
-			//OtherComp->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-
+			APlant* Plant = Cast<APlant>(OtherActor);
+			Plant->TakeDamage(DamageGenerates, FDamageEvent(), nullptr, this);
+	
 		}
 
 	}
@@ -101,13 +104,13 @@ void AZombie::BeginPlay()
 {
 	Super::BeginPlay();
 
-	//EstadoNormal = GetWorld()->SpawnActor<AEstadoNormal>(AEstadoNormal::StaticClass());
-	//EstadoNormal->DefinirZombie(this);
-	//ZombieState = EstadoNormal;
+	EstadoNormal = GetWorld()->SpawnActor<AEstadoNormal>(AEstadoNormal::StaticClass());
+	EstadoNormal->DefinirZombie(this);
+	ZombieState = EstadoNormal;
 
-	EstadoCongelado = GetWorld()->SpawnActor<AEstadoCongelado>(AEstadoCongelado::StaticClass());
-	EstadoCongelado->DefinirZombie(this);
-	ZombieState = EstadoCongelado;
+	//EstadoCongelado = GetWorld()->SpawnActor<AEstadoCongelado>(AEstadoCongelado::StaticClass());
+	//EstadoCongelado->DefinirZombie(this);
+	//ZombieState = EstadoCongelado;
 }
 
 // Called every frame
@@ -115,16 +118,16 @@ void AZombie::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	//if (Health <= 0.0f)
-	//{
-	//	Destroy();
-	//}
+	if (Health <= 0.0f)
+	{
+		Destroy();
+	}
 
-	//if (bCanMove && !this->IsHidden())
-	//{
-	//	//MoveToTarget(FVector(-800.0f, -600.0f, 160.0f));
-	//	//ZombieState->Movimiento(FVector(-800.0f, -600.0f, 160.0f));
-	//}
+	if (bCanMove && !this->IsHidden())
+	{
+		//MoveToTarget(FVector(-800.0f, -600.0f, 160.0f));
+		ZombieState->Movimiento(FVector(-800.0f, -600.0f, 160.0f));
+	}
 }
 
 float AZombie::TakeDamage(float Damage, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
@@ -157,22 +160,34 @@ void AZombie::MoveToTarget(FVector TargetLocation)
 
 void AZombie::Inicializar(FString EstadoInicial)
 {
-	EstadoNormal = GetWorld()->SpawnActor<AEstadoNormal>(AEstadoNormal::StaticClass());
-	EstadoNormal->DefinirZombie(this);
-
-	EstadoCongelado = GetWorld()->SpawnActor<AEstadoCongelado>(AEstadoCongelado::StaticClass());
-	EstadoCongelado->DefinirZombie(this);
-
 	EstadoActual = EstadoInicial;
 
 	if (EstadoActual == "Congelado")
 	{
+		EstadoCongelado = GetWorld()->SpawnActor<AEstadoCongelado>(AEstadoCongelado::StaticClass());
+		EstadoCongelado->DefinirZombie(this);
+
 		ZombieState = EstadoCongelado;
+
+	}
+	if (EstadoActual == "Ralentizado")
+	{
+		EstadoRalentizado = GetWorld()->SpawnActor<AEstadoRalentizado>(AEstadoRalentizado::StaticClass());
+		EstadoRalentizado->DefinirZombie(this);
+
+		ZombieState = EstadoRalentizado;
+
 	}
 	else if (EstadoActual == "Normal")
 	{
+		EstadoNormal = GetWorld()->SpawnActor<AEstadoNormal>(AEstadoNormal::StaticClass());
+		EstadoNormal->DefinirZombie(this);
+
 		ZombieState = EstadoNormal;
 	}
+	// Mensaje para indicar el estado actual del zombie
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Estado Zombie: %s"), *EstadoActual));
+
 }
 
 void AZombie::SetState(IState* _ZombieState)

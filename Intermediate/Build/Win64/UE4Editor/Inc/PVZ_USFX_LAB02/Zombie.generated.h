@@ -21,13 +21,13 @@ struct FHitResult;
 #define PVZ_USFX_LAB02_master_Source_PVZ_USFX_LAB02_Zombie_h_13_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execOnHit); \
-	DECLARE_FUNCTION(execOnOverlapBeginFunction);
+	DECLARE_FUNCTION(execOnMyOverlapBegin);
 
 
 #define PVZ_USFX_LAB02_master_Source_PVZ_USFX_LAB02_Zombie_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execOnHit); \
-	DECLARE_FUNCTION(execOnOverlapBeginFunction);
+	DECLARE_FUNCTION(execOnMyOverlapBegin);
 
 
 #define PVZ_USFX_LAB02_master_Source_PVZ_USFX_LAB02_Zombie_h_13_INCLASS_NO_PURE_DECLS \

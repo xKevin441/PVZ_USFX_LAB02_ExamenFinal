@@ -35,7 +35,7 @@ void EmptyLinkFunctionForGeneratedCodeZombie() {}
 		P_THIS->OnHit(Z_Param_HitComp,Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_NormalImpulse,Z_Param_Out_Hit);
 		P_NATIVE_END;
 	}
-	DEFINE_FUNCTION(AZombie::execOnOverlapBeginFunction)
+	DEFINE_FUNCTION(AZombie::execOnMyOverlapBegin)
 	{
 		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OverlappedComponent);
 		P_GET_OBJECT(AActor,Z_Param_OtherActor);
@@ -45,7 +45,7 @@ void EmptyLinkFunctionForGeneratedCodeZombie() {}
 		P_GET_STRUCT_REF(FHitResult,Z_Param_Out_SweepResult);
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->OnOverlapBeginFunction(Z_Param_OverlappedComponent,Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_Out_SweepResult);
+		P_THIS->OnMyOverlapBegin(Z_Param_OverlappedComponent,Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_Out_SweepResult);
 		P_NATIVE_END;
 	}
 	void AZombie::StaticRegisterNativesAZombie()
@@ -53,7 +53,7 @@ void EmptyLinkFunctionForGeneratedCodeZombie() {}
 		UClass* Class = AZombie::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "OnHit", &AZombie::execOnHit },
-			{ "OnOverlapBeginFunction", &AZombie::execOnOverlapBeginFunction },
+			{ "OnMyOverlapBegin", &AZombie::execOnMyOverlapBegin },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -129,9 +129,9 @@ void EmptyLinkFunctionForGeneratedCodeZombie() {}
 		}
 		return ReturnFunction;
 	}
-	struct Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics
+	struct Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics
 	{
-		struct Zombie_eventOnOverlapBeginFunction_Parms
+		struct Zombie_eventOnMyOverlapBegin_Parms
 		{
 			UPrimitiveComponent* OverlappedComponent;
 			AActor* OtherActor;
@@ -163,50 +163,50 @@ void EmptyLinkFunctionForGeneratedCodeZombie() {}
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::NewProp_OverlappedComponent_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::NewProp_OverlappedComponent_MetaData[] = {
 		{ "EditInline", "true" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::NewProp_OverlappedComponent = { "OverlappedComponent", nullptr, (EPropertyFlags)0x0010000000080080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Zombie_eventOnOverlapBeginFunction_Parms, OverlappedComponent), Z_Construct_UClass_UPrimitiveComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::NewProp_OverlappedComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::NewProp_OverlappedComponent_MetaData)) };
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::NewProp_OtherActor = { "OtherActor", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Zombie_eventOnOverlapBeginFunction_Parms, OtherActor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::NewProp_OverlappedComponent = { "OverlappedComponent", nullptr, (EPropertyFlags)0x0010000000080080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Zombie_eventOnMyOverlapBegin_Parms, OverlappedComponent), Z_Construct_UClass_UPrimitiveComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::NewProp_OverlappedComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::NewProp_OverlappedComponent_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::NewProp_OtherActor = { "OtherActor", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Zombie_eventOnMyOverlapBegin_Parms, OtherActor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::NewProp_OtherComp_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::NewProp_OtherComp_MetaData[] = {
 		{ "EditInline", "true" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::NewProp_OtherComp = { "OtherComp", nullptr, (EPropertyFlags)0x0010000000080080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Zombie_eventOnOverlapBeginFunction_Parms, OtherComp), Z_Construct_UClass_UPrimitiveComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::NewProp_OtherComp_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::NewProp_OtherComp_MetaData)) };
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::NewProp_OtherBodyIndex = { "OtherBodyIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Zombie_eventOnOverlapBeginFunction_Parms, OtherBodyIndex), METADATA_PARAMS(nullptr, 0) };
-	void Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::NewProp_bFromSweep_SetBit(void* Obj)
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::NewProp_OtherComp = { "OtherComp", nullptr, (EPropertyFlags)0x0010000000080080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Zombie_eventOnMyOverlapBegin_Parms, OtherComp), Z_Construct_UClass_UPrimitiveComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::NewProp_OtherComp_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::NewProp_OtherComp_MetaData)) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::NewProp_OtherBodyIndex = { "OtherBodyIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Zombie_eventOnMyOverlapBegin_Parms, OtherBodyIndex), METADATA_PARAMS(nullptr, 0) };
+	void Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::NewProp_bFromSweep_SetBit(void* Obj)
 	{
-		((Zombie_eventOnOverlapBeginFunction_Parms*)Obj)->bFromSweep = 1;
+		((Zombie_eventOnMyOverlapBegin_Parms*)Obj)->bFromSweep = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::NewProp_bFromSweep = { "bFromSweep", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(Zombie_eventOnOverlapBeginFunction_Parms), &Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::NewProp_bFromSweep_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::NewProp_bFromSweep = { "bFromSweep", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(Zombie_eventOnMyOverlapBegin_Parms), &Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::NewProp_bFromSweep_SetBit, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::NewProp_SweepResult_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::NewProp_SweepResult_MetaData[] = {
 		{ "NativeConst", "" },
 	};
 #endif
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::NewProp_SweepResult = { "SweepResult", nullptr, (EPropertyFlags)0x0010008008000182, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Zombie_eventOnOverlapBeginFunction_Parms, SweepResult), Z_Construct_UScriptStruct_FHitResult, METADATA_PARAMS(Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::NewProp_SweepResult_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::NewProp_SweepResult_MetaData)) };
-	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::NewProp_OverlappedComponent,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::NewProp_OtherActor,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::NewProp_OtherComp,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::NewProp_OtherBodyIndex,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::NewProp_bFromSweep,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::NewProp_SweepResult,
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::NewProp_SweepResult = { "SweepResult", nullptr, (EPropertyFlags)0x0010008008000182, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Zombie_eventOnMyOverlapBegin_Parms, SweepResult), Z_Construct_UScriptStruct_FHitResult, METADATA_PARAMS(Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::NewProp_SweepResult_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::NewProp_SweepResult_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::NewProp_OverlappedComponent,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::NewProp_OtherActor,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::NewProp_OtherComp,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::NewProp_OtherBodyIndex,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::NewProp_bFromSweep,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::NewProp_SweepResult,
 	};
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::Function_MetaDataParams[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::Function_MetaDataParams[] = {
 		{ "ModuleRelativePath", "Zombie.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AZombie, nullptr, "OnOverlapBeginFunction", nullptr, nullptr, sizeof(Zombie_eventOnOverlapBeginFunction_Parms), Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_AZombie_OnOverlapBeginFunction()
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AZombie, nullptr, "OnMyOverlapBegin", nullptr, nullptr, sizeof(Zombie_eventOnMyOverlapBegin_Parms), Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AZombie_OnMyOverlapBegin()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AZombie_OnOverlapBeginFunction_Statics::FuncParams);
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AZombie_OnMyOverlapBegin_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -235,7 +235,7 @@ void EmptyLinkFunctionForGeneratedCodeZombie() {}
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AZombie_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_AZombie_OnHit, "OnHit" }, // 512965116
-		{ &Z_Construct_UFunction_AZombie_OnOverlapBeginFunction, "OnOverlapBeginFunction" }, // 1851961383
+		{ &Z_Construct_UFunction_AZombie_OnMyOverlapBegin, "OnMyOverlapBegin" }, // 1465531721
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AZombie_Statics::Class_MetaDataParams[] = {
@@ -283,7 +283,7 @@ void EmptyLinkFunctionForGeneratedCodeZombie() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AZombie, 3107407112);
+	IMPLEMENT_CLASS(AZombie, 696315708);
 	template<> PVZ_USFX_LAB02_API UClass* StaticClass<AZombie>()
 	{
 		return AZombie::StaticClass();
